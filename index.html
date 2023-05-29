@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico"/>
+    <title>Robotron 2000</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <main>
+        <div class="caixaCores coresOn">
+            <h4>Escolha a cor do seu robô</h4>
+            <form class="coresRobo">
+                <input type="radio" name="corRobo" id="amarelo" data-cor="Amarelo"><label for="amarelo">Amarelo</label>
+                <input type="radio" name="corRobo" id="azul" data-cor="Azul" checked><label for="azul">Azul</label>
+                <input type="radio" name="corRobo" id="branco" data-cor="Branco"><label for="branco">Branco</label>
+                <input type="radio" name="corRobo" id="preto" data-cor="Preto"><label for="preto">Preto</label>
+                <input type="radio" name="corRobo" id="rosa" data-cor="Rosa"><label for="rosa">Rosa</label>
+                <input type="radio" name="corRobo" id="vermelho" data-cor="Vermelho"><label for="vermelho">Vermelho</label>
+            </form>
+        </div>
+        <section class="robotron">
+            <img id="robotron" title="clique para escolher a cor" class="robo" src="img/imagens-do-robotron/Robotron 2000 - Azul/Robotron 2000 - Azul.png" alt="Robotron">
+            <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
+        </section>
+
+        <section class="box estatisticas">
+            <div class="estatistica">
+                <p class="estatistica-titulo">Força</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero" data-estatistica="forca">0</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Poder</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero" data-estatistica="poder">0</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Energia</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero" data-estatistica="energia">0</p>
+                </div>
+            </div>
+            <div class="estatistica">
+                <p class="estatistica-titulo">Velocidade</p>
+                <div class="estatistica-valor">
+                    <p class="estatistica-numero" data-estatistica="velocidade">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="equipamentos">
+            <form class="montador">
+                <div class="box montador-conteudo">
+                    <div class="setaScrollMontador oculto">
+                        <img src="./img/setaparabaixo.gif" alt="seta rolar para baixo - montador">
+                    </div>
+                    <div class="peca">
+                        <label for="numbracos" class="peca-titulo">Braços</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste" data-controle="-" data-peca="bracos">-</buttom>
+                            <input type="text" id="numbracos" class="controle-contador" readonly value="00" data-contador>
+                            <buttom class="controle-ajuste" data-controle="+" data-peca="bracos">+</buttom>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="numblindagem" class="peca-titulo">Blindagem</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste" data-controle="-" data-peca="blindagem">-</buttom>
+                            <input type="text" id="numblindagem" class="controle-contador" readonly value="00" data-contador>
+                            <buttom class="controle-ajuste" data-controle="+" data-peca="blindagem">+</buttom>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="numnucleos" class="peca-titulo">Núcleos</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste" data-controle="-" data-peca="nucleos">-</buttom>
+                            <input type="text" id="numnucleos" class="controle-contador" readonly value="00" data-contador>
+                            <buttom class="controle-ajuste" data-controle="+" data-peca="nucleos">+</buttom>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="numpernas" class="peca-titulo">Pernas</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste" data-controle="-" data-peca="pernas">-</buttom>
+                            <input type="text" id="numpernas" class="controle-contador" readonly value="00" data-contador>
+                            <buttom class="controle-ajuste" data-controle="+" data-peca="pernas">+</buttom>
+                        </div>
+                    </div>
+                    <hr class="linha">
+                    <div class="peca">
+                        <label for="numfoguetes" class="peca-titulo">Foguetes</label>
+                        <div class="controle">
+                            <buttom class="controle-ajuste" data-controle="-" data-peca="foguetes">-</buttom>
+                            <input type="text" id="numfoguetes" class="controle-contador" readonly value="00" data-contador>
+                            <buttom class="controle-ajuste" data-controle="+" data-peca="foguetes">+</buttom>
+                        </div>
+                    </div>
+                </div>
+                <input type="button" value="Iniciar produção" class="producao" id="producao">
+            </form>
+        </section>
+    </main>
+
+    <div class="telaLoading oculto" data-loadscreen>
+        <div class="boxLoading oculto">
+        </div>
+    </div>
+
+    <section class="resultado oculto" data-resultado>
+        <div class="boxBotaoFechar">
+            <button type="button" id="botaoFechar">X</button>
+        </div>
+        <h2 class="resultadoTitulo">Parabéns! <br> Agora seu Robotron pode salvar a terra da invasão alienígena.</h2>
+        <div class="boxRoboMontado">
+            <img class="roboMontado" src="img/robotron.png" alt="Esse é o robô que você montou. Parabéns!" data-robomontado>
+        </div>
+        <section class="roboMontado__estatisticas">
+            <div class="roboMontado__estatisticas__estatistica">
+                <h3 class="roboMontado__estatisticas__estatisticaTitulo">Força</h3>
+                <p class="roboMontado__estatisticas__estatisticaNumero" data-estatisticamontado>0</p>
+            </div>
+            <div class="roboMontado__estatisticas__estatistica">
+                <h3 class="roboMontado__estatisticas__estatisticaTitulo">Poder</h3>
+                <p class="roboMontado__estatisticas__estatisticaNumero" data-estatisticamontado>0</p>
+            </div>
+            <div class="roboMontado__estatisticas__estatistica">
+                <h3 class="roboMontado__estatisticas__estatisticaTitulo">Energia</h3>
+                <p class="roboMontado__estatisticas__estatisticaNumero" data-estatisticamontado>0</p>
+            </div>
+            <div class="roboMontado__estatisticas__estatistica">
+                <h3 class="roboMontado__estatisticas__estatisticaTitulo">Velocidade</h3>
+                <p class="roboMontado__estatisticas__estatisticaNumero" data-estatisticamontado>0</p>
+            </div>
+        </section>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
